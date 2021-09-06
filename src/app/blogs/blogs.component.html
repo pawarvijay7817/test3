@@ -1,0 +1,29 @@
+<div class="row mt-5">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <h3>Blogs</h3>
+        <button class="btn btn-outline-primary" routerLink="/blogs/add">Add blog</button>
+    </div>
+    <div class="col-md-12"></div>
+    
+    <div class="col-md-3 mt-3" *ngFor="let blog of blogs;">
+      <div class="card" style="box-shadow: 0 4px 8px 0 rgb(0 0 0 / 49%), 0 6px 20px 0 rgb(0 0 0 / 45%);">
+        <!-- <img src="{{baseurl}}public/images/{{blog.image}}" style="width: 100%;"> -->
+        <div class="w-100" style="background-image: url('{{baseurl}}public/images/{{blog.image}}');
+        height: 250px; background-position-x: inherit;
+        background-size: cover; background-repeat: no-repeat;"></div>
+
+
+        <h5 style="padding-left: 15px;padding-top: 10px; margin-bottom: 0px;">{{blog.title}}</h5>
+        <div class="w-100" style="font-size: 13px; color: #585555; padding-left: 15px;">
+            <span *ngIf="blog.author">By {{blog.author}}</span>
+            <span *ngIf="!blog.author">By Admin</span><br>
+            <span>{{blog.created_at | date:'dd-MM-yyyy'}}</span>
+        </div>
+        <p style="padding: 15px; margin-bottom: 15px; padding-top: 5px; 
+                  height: 130px;overflow: hidden;">
+            {{blog.description}}
+        </p>
+      </div>
+    </div>
+</div>

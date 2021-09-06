@@ -1,0 +1,28 @@
+
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <div class="card mt-5">
+      <div class="card-header">
+        Login
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="card-body row">
+            <div class="col-md-12">
+              <label>Username</label>
+              <input type="text" formControlName="username" class="form-control">
+            </div>
+            <div class="col-md-12">
+              <label>Password</label>
+              <input type="password" formControlName="password" class="form-control">
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="col-md-12">
+              <input type="submit" class="btn btn-outline-success btn-block">
+            </div>
+          </div>
+      </form>
+    </div>
+  </div>
+</div> 
